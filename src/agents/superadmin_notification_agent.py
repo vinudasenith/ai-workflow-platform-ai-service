@@ -7,6 +7,7 @@ llm = ChatOpenAI(
     api_key=OPENAI_API_KEY,
 )
 
+# Define the superadmin notification agent
 super_admin_notification_agent = Agent(
     role="Superadmin Notification Agent",
     goal="Send email notification to superadmin whenever a registration require review",
