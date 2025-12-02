@@ -1,4 +1,5 @@
 from crewai import Task
+from src.agents.notification_agent import notification_agent
 
 notification_task = Task(
     description=(
@@ -11,5 +12,6 @@ notification_task = Task(
         "STRICT JSON OUTPUT ONLY:\n"
         "{ 'emailSubject': '', 'emailBody': '' }"
     ),
+    agent=notification_agent,
     expected_output="Strict JSON only with emailSubject & emailBody fields."
 )

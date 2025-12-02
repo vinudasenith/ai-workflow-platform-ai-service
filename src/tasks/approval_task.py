@@ -1,5 +1,7 @@
 from crewai import Task
+from src.agents.approval_agent import approval_agent
 
+# Define the approval task
 approval_task = Task(
     description=(
         "You are an Approval Specialist. Approve or reject an organization registration "
@@ -16,5 +18,6 @@ approval_task = Task(
         "STRICT JSON OUTPUT ONLY:\n"
         "{ 'approvalStatus': 'approved' | 'rejected' | 'needs_superadmin_review', 'reasons': [] }"
     ),
-    expected_output="JSON only with 'approvalStatus' and 'reasons'."
+    expected_output="JSON only with 'approvalStatus' and 'reasons'.",
+    agent=approval_agent
 )

@@ -1,4 +1,5 @@
 from crewai import Task
+from src.agents.validation_agent import validation_agent
 
 # Define the validation task
 validate_task= Task(
@@ -8,5 +9,6 @@ validate_task= Task(
 
     ),
     expected_output="Strict JSON only.",
+    agent=validation_agent
 )
 
